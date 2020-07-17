@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js"  lang="en">
+
+	<head>
+		<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<!-- META DATA -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+		<!-- TITLE OF SITE -->
+		<title>El Sahariano Travel</title>
+
+		<!-- favicon img -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicor.png"/>
+
+		<!--style.css-->
+		<link rel="stylesheet" href="assets/css/style.css" />
+
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body class="dark">
+      <div class="form-group">
+    </form>
+		<form action="#" class="login-form" name="myForm" onsubmit="return validateForm()" id="error">
+	    <h1>Login In</h1>
+	    <div class="textb">
+	      <input type="email" required id="user">
+	      <div class="placeholder" id="erroruser">Email</div>
+	    </div>
+
+	    <div class="textb">
+	      <input type="password" required id="pass">
+	      <div class="placeholder" id="errorpwdchar" id="errorpwd">Password</div>
+	      <div class="show-password fas fa-eye-slash"></div>
+	    </div>
+
+	    <button class="btn btn-default" disabled><i class="fas fa-arrow-right" disabled></i></button>
+	    <a href="#">Can't Sign in?</a>
+	    <a href="#">Create Account</a>
+	  </form>
+    <!--Form-->
+    </div>
+    <!--Form-input-->
+  </div>
+  <!--COntainer-->
+	<script type="text/javascript">
+			$(window).load(function () {
+					$("#box").fadeOut("slow");
+			});
+	</script>
+		<script>
+	    var fields = document.querySelectorAll(".textb input");
+	    var btn = document.querySelector(".btn");
+	    function check(){
+	      if(fields[0].value != "" && fields[1].value != "")
+	        btn.disabled = false;
+	      else
+	        btn.disabled = true;
+	    }
+
+	    fields[0].addEventListener("keyup",check);
+	    fields[1].addEventListener("keyup",check);
+
+	    document.querySelector(".show-password").addEventListener("click",function(){
+	      if(this.classList[2] == "fa-eye-slash"){
+	        this.classList.remove("fa-eye-slash");
+	        this.classList.add("fa-eye");
+	        fields[1].type = "text";
+	      }else{
+	        this.classList.remove("fa-eye");
+	        this.classList.add("fa-eye-slash");
+	        fields[1].type = "password";
+	      }
+	    });
+			function removeAlerts(){
+	document.getElementById("error").innerHTML = "";
+	document.getElementById("erroruser").innerHTML = "";
+	document.getElementById("errorpwd").innerHTML = "";
+	document.getElementById("errorpwdchar").innerHTML = "";
+}
+
+function validateForm() {
+	removeAlerts();
+
+	var username = document.forms["myForm"]["user"].value;
+	var pwd = document.forms["myForm"]["pass"].value;
+
+	if(!username && !pwd){
+		document.getElementById("error").innerHTML = "Please input username and password";
+		return false;
+	} else if(username == null || username == ""){
+		document.getElementById("erroruser").innerHTML = "Please input your username";
+		return false;
+	} else if(pwd == null || pwd == ""){
+		document.getElementById("errorpwd").innerHTML = "Please input your password";
+		return false;
+	} else if(pwd.length < 6){
+		document.getElementById("errorpwdchar").innerHTML = "your password should be minimum 6 character";
+		return false;
+	}
+
+}
+	  </script>
+		</body>
+</html>

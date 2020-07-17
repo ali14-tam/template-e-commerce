@@ -1,0 +1,9 @@
+"*":
+  core:
+    telemetryConsent: "no"
+  editor:
+    fontSize: 15
+  "exception-reporting":
+    userId: "43799a55-c52e-41b0-8c8c-ad35dfeb388d"
+  github:
+    sourceRemoteName: "https://elsaharinotravel.com"
